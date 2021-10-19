@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/toDoFragment"
+        android:icon="@drawable/ic_check"
+        android:title="@string/title_to_do" />
+    <item
+        android:id="@+id/sportFragment"
+        android:icon="@drawable/ic_run"
+        android:title="@string/title_sport" />
+    <item
+        android:id="@+id/healthFragment"
+        android:icon="@drawable/ic_hospital"
+        android:title="@string/title_health" />
+</menu>

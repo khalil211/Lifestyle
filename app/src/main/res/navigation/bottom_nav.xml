@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="tn.esprit.lifestyle.HomeFragment"
+        android:label="@string/label_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/toDoFragment"
+        android:name="tn.esprit.lifestyle.ToDoFragment"
+        android:label="@string/label_to_do"
+        tools:layout="@layout/fragment_to_do" />
+    <fragment
+        android:id="@+id/sportFragment"
+        android:name="tn.esprit.lifestyle.SportFragment"
+        android:label="@string/label_sport"
+        tools:layout="@layout/fragment_sport" />
+    <fragment
+        android:id="@+id/healthFragment"
+        android:name="tn.esprit.lifestyle.HealthFragment"
+        android:label="@string/label_health"
+        tools:layout="@layout/fragment_health" />
+</navigation>

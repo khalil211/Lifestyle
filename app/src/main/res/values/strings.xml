@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lifestyle</string>
+    <string name="title_home">Home</string>
+    <string name="title_to_do">To Do</string>
+    <string name="title_sport">Sport</string>
+    <string name="title_health">Health</string>
+    <string name="label_home">Dashboard</string>
+    <string name="label_to_do">To Do &amp; Reminders</string>
+    <string name="label_sport">Workout &amp; Fitness</string>
+    <string name="label_health">Food &amp; Meds</string>
+</resources>
