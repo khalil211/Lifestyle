@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="tn.esprit.lifestyle.HomeFragment"
+        android:name="tn.esprit.lifestyle.ui.home.HomeFragment"
         android:label="@string/label_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/toDoFragment"
-        android:name="tn.esprit.lifestyle.ToDoFragment"
+        android:name="tn.esprit.lifestyle.ui.todo.ToDoFragment"
         android:label="@string/label_to_do"
         tools:layout="@layout/fragment_to_do" />
     <fragment
         android:id="@+id/sportFragment"
-        android:name="tn.esprit.lifestyle.SportFragment"
+        android:name="tn.esprit.lifestyle.ui.sport.SportFragment"
         android:label="@string/label_sport"
         tools:layout="@layout/fragment_sport" />
     <fragment
         android:id="@+id/healthFragment"
-        android:name="tn.esprit.lifestyle.HealthFragment"
+        android:name="tn.esprit.lifestyle.ui.health.HealthFragment"
         android:label="@string/label_health"
         tools:layout="@layout/fragment_health" />
 </navigation>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="main_fragment_padding_start">40px</dimen>
-    <dimen name="main_fragment_padding_top">100px</dimen>
-    <dimen name="main_fragment_padding_end">40px</dimen>
-    <dimen name="main_fragment_padding_bottom">100px</dimen>
+    <dimen name="main_fragment_padding_start">16px</dimen>
+    <dimen name="main_fragment_padding_top">0px</dimen>
+    <dimen name="main_fragment_padding_end">16px</dimen>
+    <dimen name="main_fragment_padding_bottom">0px</dimen>
 </resources>
