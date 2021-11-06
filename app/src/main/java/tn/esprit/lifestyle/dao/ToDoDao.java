@@ -29,4 +29,7 @@ public interface ToDoDao {
 
     @Query("SELECT * FROM ToDo WHERE reminder = 'REPEAT'")
     List<ToDo> getRepeatedToDos();
+
+    @Query("SELECT * FROM ToDo WHERE reminder = 'ONE_TIME'")
+    List<ToDo> getOneTimeToDos();
 }
