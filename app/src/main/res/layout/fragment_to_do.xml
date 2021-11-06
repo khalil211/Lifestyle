@@ -4,124 +4,108 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="@dimen/main_fragment_padding_start"
-    android:paddingTop="@dimen/main_fragment_padding_top"
-    android:paddingEnd="@dimen/main_fragment_padding_end"
-    android:paddingBottom="@dimen/main_fragment_padding_bottom"
     tools:context=".ui.todo.ToDoFragment"
     tools:ignore="PxUsage">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/toDoList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="false"
+        android:paddingTop="16sp"
+        android:paddingBottom="16sp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
+        android:id="@+id/addToDoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp"
         android:clickable="true"
+        android:focusable="true"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <TextView
+        android:id="@+id/noToDosText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start by adding a To Do"
+        android:textColor="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Space
+        <com.google.android.material.chip.Chip
+            android:id="@+id/doneFilterChip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Space
+            android:text="Done"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/undoneFilterChip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="16dp"
+            android:text="Undone"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/noReminderFilterChip"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Sort" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="5dp"
+            android:text="No Reminder"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/oneTimeFilterChip"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10px"
-            android:layout_weight="1"
-            android:text="Edit" />
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <LinearLayout
-            android:id="@+id/items_to_do"
-            android:layout_width="match_parent"
+            android:text="One Time"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/repeatedFilterChip"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="Repeated"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/creationSortChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creation"
+            app:chipIcon="@drawable/ic_baseline_sort_24"
+            app:closeIconEnabled="true" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/reminderSortChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reminder"
+            app:chipIcon="@drawable/ic_baseline_sort_24"
+            app:closeIconEnabled="true" />
 
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30px"
-                    android:text="To do 1" />
+    </com.google.android.material.chip.ChipGroup>
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="16/10/2021 21:30" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30px"
-                    android:text="To do 2" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="16/10/2021 21:35" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

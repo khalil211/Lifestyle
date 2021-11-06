@@ -14,7 +14,11 @@
         android:id="@+id/toDoFragment"
         android:name="tn.esprit.lifestyle.ui.todo.ToDoFragment"
         android:label="@string/label_to_do"
-        tools:layout="@layout/fragment_to_do" />
+        tools:layout="@layout/fragment_to_do" >
+        <action
+            android:id="@+id/action_toDoFragment_to_singleToDoFragment"
+            app:destination="@id/singleToDoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sportFragment"
         android:name="tn.esprit.lifestyle.ui.sport.SportFragment"
@@ -25,4 +29,15 @@
         android:name="tn.esprit.lifestyle.ui.health.HealthFragment"
         android:label="@string/label_health"
         tools:layout="@layout/fragment_health" />
+    <fragment
+        android:id="@+id/singleToDoFragment"
+        android:name="tn.esprit.lifestyle.ui.todo.SingleToDoFragment"
+        android:label="@string/title_to_do"
+        tools:layout="@layout/fragment_single_to_do" >
+        <argument
+            android:name="toDo"
+            app:argType="tn.esprit.lifestyle.entities.ToDo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>

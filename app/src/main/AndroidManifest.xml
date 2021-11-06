@@ -3,6 +3,7 @@
     package="tn.esprit.lifestyle">
 
     <application
+        android:name="tn.esprit.lifestyle.MyApplication"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -16,7 +17,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>s
+        </activity>
     </application>
 
 </manifest>
