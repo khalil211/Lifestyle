@@ -68,7 +68,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ToDoViewHolder
             return false;
         if (toDo.getReminder() == Reminder.REPEAT) {
             String day = Calendar.getInstance().getDisplayName(Calendar.DAY_OF_WEEK, 0, new Locale("en", "UK"));
-            System.out.println(day);
             if (!toDo.getWeekDays().contains(day))
                 return false;
             if (toDo.getTime().compareTo(LocalTime.now()) > 0)

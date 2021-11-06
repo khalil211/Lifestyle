@@ -10,6 +10,8 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import tn.esprit.lifestyle.ui.todo.ToDoFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,5 +28,6 @@ public class MainActivity extends AppCompatActivity {
         ).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+        ToDoFragment.updateRepeated();
     }
 }

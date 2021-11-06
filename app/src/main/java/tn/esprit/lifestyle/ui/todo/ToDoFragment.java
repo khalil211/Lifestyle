@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,13 +27,18 @@ import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+import tn.esprit.lifestyle.MainActivity;
+import tn.esprit.lifestyle.MyApplication;
 import tn.esprit.lifestyle.R;
 import tn.esprit.lifestyle.adapters.ToDoAdapter;
 import tn.esprit.lifestyle.database.LifeStyleDB;
@@ -56,6 +62,7 @@ public class ToDoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        updateRepeated();
         setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.fragment_to_do, container, false);
         db = LifeStyleDB.getDB(this.getContext());
@@ -71,6 +78,7 @@ public class ToDoFragment extends Fragment {
             public void onItemClickListener(int position, View v) {
                 ToDo toDo = displayedTodos.get(position);
                 toDo.setDone(!toDo.isDone());
+                toDo.setDoneDate(new Date());
                 db.toDoDao().update(toDo);
                 updateToDosAndChipsDisplay();
             }
@@ -239,5 +247,21 @@ public class ToDoFragment extends Fragment {
         }
         updateToDosAndChipsDisplay();
         sharedPreferencesEditor.apply();
+    }
+
+    public static void updateRepeated() {
+        LifeStyleDB db =LifeStyleDB.getDB(MyApplication.getAppContext());
+        db.toDoDao().getRepeatedToDos().forEach(t -> {
+            Calendar c =Calendar.getInstance();
+            c.add(Calendar.DATE, -1);
+            c.set(Calendar.HOUR, 23);
+            c.set(Calendar.MINUTE, 59);
+            Date date = c.getTime();
+            String day = Calendar.getInstance().getDisplayName(Calendar.DAY_OF_WEEK, 0, new Locale("en", "UK"));
+            if (t.isDone() && t.getDoneDate().compareTo(date) < 0 && t.getWeekDays().contains(day)) {
+                t.setDone(false);
+                db.toDoDao().update(t);
+            }
+        });
     }
 }

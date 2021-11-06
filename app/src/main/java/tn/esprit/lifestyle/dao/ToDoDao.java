@@ -26,4 +26,7 @@ public interface ToDoDao {
 
     @Query("DELETE FROM ToDo WHERE done = 1")
     void deleteDone();
+
+    @Query("SELECT * FROM ToDo WHERE reminder = 'REPEAT'")
+    List<ToDo> getRepeatedToDos();
 }
