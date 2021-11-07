@@ -63,8 +63,6 @@ public class HomeFragment extends Fragment {
         String day = Calendar.getInstance().getDisplayName(Calendar.DAY_OF_WEEK, 0, new Locale("en", "UK"));
         List<ToDo> list = db.toDoDao().getOneTimeToDos().stream().filter(t -> {
             Calendar c = Calendar.getInstance();
-            System.out.println(c.get(Calendar.DAY_OF_MONTH));
-            System.out.println(t.getDate().getDayOfMonth());
             if (c.get(Calendar.MONTH)+1 != t.getDate().getMonthValue())
                 return false;
             return c.get(Calendar.DAY_OF_MONTH) == t.getDate().getDayOfMonth();
