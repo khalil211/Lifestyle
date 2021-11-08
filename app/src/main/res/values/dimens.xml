@@ -4,4 +4,11 @@
     <dimen name="main_fragment_padding_top">0px</dimen>
     <dimen name="main_fragment_padding_end">16px</dimen>
     <dimen name="main_fragment_padding_bottom">0px</dimen>
+    <dimen name="two_dp">2dp</dimen>
+    <dimen name="four_dp">4dp</dimen>
+    <dimen name="eight_dp">8dp</dimen>
+    <dimen name="sixteen_dp">16dp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_large">17sp</dimen>
+    <dimen name="list_item_padding">8dp</dimen>
 </resources>

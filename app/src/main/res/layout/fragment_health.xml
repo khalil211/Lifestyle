@@ -4,16 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.health.HealthFragment" >
+    tools:context=".ui.todo.ToDoFragment"
+    tools:ignore="PxUsage">
 
-    <TextView
-        android:id="@+id/textView5"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/medsList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="false"
+        android:paddingTop="16sp"
+        android:paddingBottom="16sp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
+        app:layout_constraintVertical_bias="0.0">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addMeds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Health"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="2dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/noToDosText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No meds to show"
+        android:textColor="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/doneFilterChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/undoneFilterChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Undone"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/noReminderFilterChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Reminder"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/oneTimeFilterChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Time"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/repeatedFilterChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repeated"
+            app:chipIcon="@drawable/ic_baseline_filter_alt_24"
+            app:closeIconEnabled="true" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/creationSortChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creation"
+            app:chipIcon="@drawable/ic_baseline_sort_24"
+            app:closeIconEnabled="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/reminderSortChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reminder"
+            app:chipIcon="@drawable/ic_baseline_sort_24"
+            app:closeIconEnabled="true" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:text="A Week of Healthy Meals Plan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

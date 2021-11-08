@@ -6,13 +6,20 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import tn.esprit.lifestyle.ui.health.HealthFragment;
+import tn.esprit.lifestyle.ui.home.HomeFragment;
 import tn.esprit.lifestyle.ui.todo.ToDoFragment;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +36,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
         ToDoFragment.updateRepeated();
+        HealthFragment.updateRepeated();
     }
+
 }
