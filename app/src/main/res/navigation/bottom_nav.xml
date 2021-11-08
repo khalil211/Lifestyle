@@ -23,7 +23,14 @@
         android:id="@+id/sportFragment"
         android:name="tn.esprit.lifestyle.ui.sport.SportFragment"
         android:label="@string/label_sport"
-        tools:layout="@layout/fragment_sport" />
+        tools:layout="@layout/fragment_sport" >
+        <action
+            android:id="@+id/action_sportFragment_to_singleActivityEntryFragment"
+            app:destination="@id/singleActivityEntryFragment" />
+        <action
+            android:id="@+id/action_sportFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+    </fragment>
     <fragment
         android:id="@+id/healthFragment"
         android:name="tn.esprit.lifestyle.ui.health.HealthFragment"
@@ -39,5 +46,28 @@
             app:argType="tn.esprit.lifestyle.entities.ToDo"
             app:nullable="true"
             android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleActivityEntryFragment"
+        android:name="tn.esprit.lifestyle.ui.sport.SingleActivityEntryFragment"
+        android:label="Entry"
+        tools:layout="@layout/fragment_single_activity_entry" >
+        <action
+            android:id="@+id/action_singleActivityEntryFragment_to_singleActivityFragment"
+            app:destination="@id/singleActivityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleActivityFragment"
+        android:name="tn.esprit.lifestyle.ui.sport.SingleActivityFragment"
+        android:label="Activity"
+        tools:layout="@layout/fragment_single_activity" />
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="tn.esprit.lifestyle.ui.sport.ActivityFragment"
+        android:label="Activities"
+        tools:layout="@layout/fragment_activity" >
+        <action
+            android:id="@+id/action_activityFragment_to_singleActivityFragment"
+            app:destination="@id/singleActivityFragment" />
     </fragment>
 </navigation>
