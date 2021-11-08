@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.material.chip.Chip;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -19,8 +21,11 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 
 import tn.esprit.lifestyle.R;
+import tn.esprit.lifestyle.adapters.ActivityEntryAdapter;
 import tn.esprit.lifestyle.adapters.ToDoAdapter;
 import tn.esprit.lifestyle.database.LifeStyleDB;
+import tn.esprit.lifestyle.entities.Activity;
+import tn.esprit.lifestyle.entities.ActivityEntry;
 import tn.esprit.lifestyle.entities.Reminder;
 import tn.esprit.lifestyle.entities.ToDo;
 
@@ -47,7 +52,6 @@ public class HomeFragment extends Fragment {
                 toDo.setDone(!toDo.isDone());
                 toDo.setDoneDate(new Date());
                 db.toDoDao().update(toDo);
-
             }
 
             @Override
@@ -56,6 +60,17 @@ public class HomeFragment extends Fragment {
             }
         });
         toDosList.setAdapter(toDoAdapter);
+        Chip addToDoButton = view.findViewById(R.id.addToDoButton);
+        addToDoButton.setOnClickListener(view1 -> Navigation.findNavController(getView()).navigate(R.id.singleToDoFragment));
+        List<ActivityEntry> activityEntries = db.activityDao().getThreeLastEntries();
+        ActivityEntryAdapter adapter = new ActivityEntryAdapter(getContext(), activityEntries, db.activityDao().getAllActivities(), position -> {});
+        TextView noActivitiesText = view.findViewById(R.id.noActivitiesText);
+        if (!activityEntries.isEmpty())
+            noActivitiesText.setVisibility(View.GONE);
+        RecyclerView activitiesList = view.findViewById(R.id.activitiesList);
+        activitiesList.setAdapter(adapter);
+        Chip addActivityEntrtyButton = view.findViewById(R.id.addActivityEntrtyButton);
+        addActivityEntrtyButton.setOnClickListener(view1 -> Navigation.findNavController(getView()).navigate(R.id.singleActivityEntryFragment));
         return view;
     }
 

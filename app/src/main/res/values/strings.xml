@@ -8,4 +8,6 @@
     <string name="label_to_do">To Do &amp; Reminders</string>
     <string name="label_sport">Workout &amp; Fitness</string>
     <string name="label_health">Food &amp; Meds</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

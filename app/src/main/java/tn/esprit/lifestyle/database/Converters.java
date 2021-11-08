@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 
+import tn.esprit.lifestyle.entities.ActivityType;
 import tn.esprit.lifestyle.entities.Reminder;
 
 public class Converters {
@@ -61,5 +62,19 @@ public class Converters {
     @TypeConverter
     public static Long dateToTimestamp(Date date) {
         return date == null ? null : date.getTime();
+    }
+
+    @TypeConverter
+    public static String activityTypeToString(ActivityType activityType) {
+        return activityType == null ? null : activityType.toString();
+    }
+
+    @TypeConverter
+    public static ActivityType stringToActivutyType(String string) {
+        for (ActivityType activityType : ActivityType.values()) {
+            if (activityType.toString().equals(string))
+                return activityType;
+        }
+        return null;
     }
 }
