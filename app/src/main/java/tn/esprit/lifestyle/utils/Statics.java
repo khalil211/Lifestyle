@@ -11,5 +11,6 @@ public class Statics {
         public static final String TODO_FILTER_NO_REMINDER = "toDoFilterNoReminder";
         public static final String TODO_FILTER_REPEATED = "toDoFilterRepeated";
         public static final String TODO_FILTER_ONE_TIME = "toDoFilterOneTime";
+        public static final String ENTRY_FILTER_ACTIVITY = "entryFilterActivity";
     }
 }

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.sport.SingleActivityEntryFragment" >
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Activity"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/activitySpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toStartOf="@+id/addActivityButton"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/addActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="@+id/activitySpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activitySpinner" />
+
+    <TextView
+        android:id="@+id/weightDistanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="weight / distance"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/activitySpinner"
+        app:layout_constraintTop_toBottomOf="@+id/activitySpinner" />
+
+    <EditText
+        android:id="@+id/weightDistanceEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/weightDistanceText"
+        app:layout_constraintTop_toBottomOf="@+id/weightDistanceText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/weightDistanceUnitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="unit"
+        android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/weightDistanceEdit"
+        app:layout_constraintStart_toEndOf="@+id/weightDistanceEdit"
+        app:layout_constraintTop_toTopOf="@+id/weightDistanceEdit" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/confirmEntryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="2dp"
+        android:clickable="true"
+        android:src="@drawable/ic_check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Time"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/weightDistanceEdit"
+        app:layout_constraintTop_toBottomOf="@+id/weightDistanceEdit" />
+
+    <TextView
+        android:id="@+id/setsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Sets"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/weightDistanceEdit"
+        app:layout_constraintTop_toBottomOf="@+id/weightDistanceEdit" />
+
+    <EditText
+        android:id="@+id/setsEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/setsText"
+        app:layout_constraintTop_toBottomOf="@+id/setsText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/repsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Reps"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/setsEdit"
+        app:layout_constraintTop_toBottomOf="@+id/setsEdit" />
+
+    <EditText
+        android:id="@+id/repsEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/repsText"
+        app:layout_constraintTop_toBottomOf="@+id/repsText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/timeEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/timeText"
+        app:layout_constraintTop_toBottomOf="@+id/timeText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/timeUnitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="mins"
+        android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/timeEdit"
+        app:layout_constraintStart_toEndOf="@+id/timeEdit"
+        app:layout_constraintTop_toTopOf="@+id/timeEdit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
